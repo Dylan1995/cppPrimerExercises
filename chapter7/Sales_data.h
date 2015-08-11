@@ -21,5 +21,10 @@ public:
     Sales_data add(const Sales_data&, const Sales_data&);
     std::istream &read(std::istream&, Sales_data&);
     std::ostream &print(std::ostream&, const Sales_data&);
-    std::istream &read(std::istream&, Person&);
+
+    Sales_data() = default;
+    Sales_data(const std::string &book): bookNo(book){}
+    Sales_data(const std::string &book, const unsigned, const double, const double);
+    Sales_data(std::istream&);
+
 };

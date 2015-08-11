@@ -16,3 +16,16 @@ std::ostream& Sales_data::print(std::ostream &os, const Sales_data &item){
     os << item.isbn() << " " << item.units_sold << " " << item.sellingprice << " " << item.saleprice << " " << item.discount;
     return os;
 }
+
+Sales_data::Sales_data(const std::string &book, const unsigned num, const double sellp, const double salep){
+    bookNo = book;
+    units_sold = num;
+    sellingprice = sellp;
+    saleprice = salep;
+    if(sellingprice)
+        discount = saleprice / sellingprice;
+}
+
+Sales_data::Sales_data(std::istream &is){
+    is >> *this;
+}
