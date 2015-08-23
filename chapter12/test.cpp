@@ -15,12 +15,11 @@ int main(int argc, char **argv) {
         v1 = v2;
     }
     cout << v1.size() << endl;
-    string *ps = new string;
-    if (*ps == "") cout << "ok" << endl;
-    unique_ptr<double> upd(new double(3.14));
-    cout << *upd << endl;
-    unique_ptr<int> upi1(new int(123));
-    unique_ptr<int> upi2(upi1.release());
-    cout << *upi2 << endl;
+    int *p = new int[5];
+    *p = 3;
+    cout << *p << endl;
+    *(p + 3) = 4;
+    cout << p[3] << endl;
+    cout << p[1] << endl;
     return 0;
 }
